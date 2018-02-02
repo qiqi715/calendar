@@ -1,0 +1,315 @@
+/*css reset*/
+body,
+p {
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/*end css reset*/
+/*public css*/
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/*end public css*/
+/* index.html*/
+.celendar {
+    margin: 50px auto;
+    border: 1px solid #646464;
+    width: 336px;
+    height: 240px;
+    font-size: 12px;
+    cursor: default;
+}
+.celendar .date {
+    display: block;
+    line-height: 46px;
+    text-align: center;
+    color: #06c;
+}
+.celendar .date:hover {
+    text-decoration: underline;
+}
+.celendar-cont {
+
+}
+.celendar-left {
+    float: left;
+    padding: 3px 16px 0 19px;
+    width: 168px;
+}
+.celendar-ltitle {
+    position: relative;
+    padding: 0 20px;
+    height: 32px;
+}
+.celendar-ltitle .title {
+    line-height: 32px;
+    text-align: center;
+}
+.celendar-ltitle .title:hover {
+    color: #06c;
+}
+.celendar-ltitle .pre-box,
+.celendar-ltitle .next-box {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 100%;
+}
+.celendar-ltitle .pre-box {
+    left: 0;
+}
+.celendar-ltitle .next-box {
+    right: 0;
+}
+.celendar-ltitle .disable .pre,
+.celendar-ltitle .disable .pre:hover {
+    border-right-color: #ccc;
+}
+.celendar-ltitle .disable .next,
+.celendar-ltitle .disable .next:hover {
+    border-left-color: #ccc;
+}
+.celendar-ltitle span {
+    position: absolute;
+    top: 50%;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    transform: translateY(-50%);
+}
+.celendar-ltitle .pre {
+    left: 0;
+    border-right: 7px solid #000;
+}
+.celendar-ltitle .pre:hover {
+    border-right-color: #06c;
+}
+.celendar-ltitle .next {
+    right: 0;
+    border-left: 7px solid #000;
+}
+.celendar-ltitle .next:hover {
+    border-left-color: #06c;
+}
+.celendar-lcont {
+    position: relative;
+    height: 155px;
+    line-height: 1;
+    overflow: hidden;
+}
+.celendar-lbox {
+    z-index: 1;
+    opacity: 0;
+    transform: scale(2);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 168px;
+    height: 155px;
+}
+.celendar-lbox > li {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.celendar-lbox > li:nth-of-type(1) {
+    left: 0;
+}
+.celendar-lbox > li:nth-of-type(2) {
+    left: 100%;
+}
+.celendar-lbox .gray {
+    color: #c2c2c2;
+}
+.celendar-lbox .hover {
+    padding: 1px;
+    border: 1px solid #b9d7fc;
+    background-color: #edf5ff;
+}
+.celendar-lbox .cur {
+    padding: 1px;
+    border: 1px solid #0066cc;
+}
+.celendar-lbox .active {
+    position: relative;
+    padding: 1px;
+    border: 1px solid #06c;
+    background-image: linear-gradient(#ecf5ff 30%, #d0e5ff 100%);
+}
+.celendar-lbox .active:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed #000;
+}
+/*month*/
+.month {
+    z-index: 10;
+    opacity: 1;
+    transform: scale(1);
+    text-align: center;
+}
+.month > li:nth-of-type(1) {
+}
+.month-title {
+    height: 16px;
+    border-bottom: 1px dashed #f5f5f5;
+}
+.month-title li {
+    float: left;
+    width: 24px;
+    line-height: 16px;
+}
+.month-cont li {
+    float: left;
+    padding: 2px;
+    width: 20px;
+    height: 16px;
+    line-height: 16px;
+    color: #00003a;
+}
+/*end month*/
+/*year*/
+.year-cont li,
+.year-ten-cont li,
+.year-hundred-cont li {
+    float: left;
+    padding: 2px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    color: #00003a;
+}
+.year-hundred-cont li {
+    line-height: 18px;
+}
+/*end year*/
+.celendar-right {
+    float: left;
+    width: 126px;
+}
+.clock-wrap {
+    box-shadow: 0 0 1px  #000;
+    border-radius: 50%;
+    border: 2px solid #8b93a3;
+    padding: 1px;
+}
+.clock {
+    position: relative;
+    box-shadow: 3px 0 0 #8b93a3;
+    border-radius: 50%;
+    border: 2px solid #8b93a3;
+    background-image: linear-gradient(45deg, #e8eeef 0%, #fff 100%);
+}
+.clock > span {
+    position: absolute;
+}
+.clock .split-cirle {
+    left: 55px;
+    top: 55px;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #325c67;
+}
+.clock .split-hour {
+    left: 57px;
+    top: 22px;
+    width: 2px;
+    height: 36px;
+    background-color: #566971;
+    transform-origin: bottom;
+}
+.clock .split-hour:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    display: block;
+    width: 100%;
+    height: 6px;
+    background-color: #566971;
+}
+.clock .split-minute {
+    left: 57px;
+    top: 10px;
+    width: 2px;
+    height: 50px;
+    background-color: #566971;
+    transform: rotate(30deg);
+    transform-origin: bottom;
+}
+.clock .split-minute:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: #566971;
+}
+.clock .split-second {
+    left: 57px;
+    top: 2px;
+    width: 2px;
+    height: 56px;
+    background-color: #566971;
+    transform: rotate(50deg);
+    transform-origin: bottom;
+}
+.clock .split-second:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+    display: block;
+    width: 100%;
+    height: 18px;
+    background-color: #566971;
+}
+.clock-list {
+    height: 116px;
+}
+.clock-list li {
+    position: absolute;
+    top: 5px;
+    left: 57px;
+    width: 2px;
+    height: 2px;
+    background-color: #9aaeb4;
+    transform-origin: center 53px;
+}
+.clock-list li:nth-of-type(5n + 1) {
+    height: 8px;
+    background-color: #466b76;
+}
+.celendar-right .time {
+    padding-top: 5px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+}
+.celendar-right .day {
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #938d8d;
+}
+/*end index.html*/
